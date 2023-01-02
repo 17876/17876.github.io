@@ -1,0 +1,31 @@
+{"nodes": [
+    {
+        "id": "0",
+        "title": "Google Earth",
+        "label": "video",
+        "comment": "Zoom-in from Google Earth to the cemetery.",
+        "href": "/poem_45176/pages/google_earth/google_earth.html"
+    },
+
+    {   
+        "id": "1",
+        "title": "Railroad - Cemetery 04.01.2021",
+        "label": "audio",
+        "comment": "Field at the cemetery. Railroad peep.",
+        "href": "https://google.com"
+    },
+    
+    {
+        "id": "2",
+        "title": "Showeling - Cemetery 04.01.2021",
+        "label": "audio",
+        "comment": "Field at the cemetery. Me showeling the snow.",
+        "href": "https://youtube.com"
+    }
+], 
+
+"links": [
+    {"source": 1, "target": 0},
+    {"source": 2, "target": 0}
+    ]
+}
