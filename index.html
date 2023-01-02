@@ -125,8 +125,6 @@
                 
                 const nodeGroups = svg.selectAll(".node-group");
 
-
-                   
                 function tick() {
                         link
                                 .attr("x1", d => d.source.x)
@@ -175,7 +173,6 @@
                                 .attr("r", 10 * 2)
                         .transition()
                                 .attr("r", 10)
-                                //.attr("fill", d3.schemeCategory10[d.index % 10]);
                         
                         window.open(d.href, "_blank");
                         
