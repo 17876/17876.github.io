@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+        
+.node-text { 
+        font-family: "IBM Plex Mono";
+        font-size: 10px;
+        text-align: left;
+}
+
+.node { stroke: #222; stroke-width: 1.5px; }
+.node.audio { fill: rgb(8, 123, 0); }
+.node.video { fill: rgb(212, 0, 124); }
+.link { stroke: #999; stroke-opacity: 1; stroke-width: 1.5px; }
+
+#graph {
+    position: absolute;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+}
+
+h1 { 
+    font-family: "IBM Plex Mono";
+    font-size: 14px;
+    font-weight: normal;
+    
+}
+
+iframe {
+    border: 0;
+}
