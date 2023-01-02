@@ -11,6 +11,11 @@
         
 <div id="graph">
 </div>
+<div id="side-right">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti tenetur dignissimos recusandae sequi rerum voluptatibus vitae consectetur, expedita quis unde quo dolorum commodi blanditiis nam totam saepe excepturi. Praesentium, modi.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti tenetur dignissimos recusandae sequi rerum voluptatibus vitae consectetur, expedita quis unde quo dolorum commodi blanditiis nam totam saepe excepturi. Praesentium, modi.</p>
+
+</div>
 
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script type="text/javascript">
@@ -22,7 +27,8 @@
                 .attr("pointer-events", "all");
         
         d3.json("graph.json").then(function(graph) {
-                const width = 1000, height = 1000;
+                var width = window.innerWidth;
+                var height = window.innerHeight;
                 const minCircleRadius = 15;
                 const maxCircleRadius = 20;
 
@@ -61,7 +67,7 @@
                 const forceCollision = d3.forceCollide(30)
                         .strength(1);
 
-                const forceCenter = d3.forceCenter(width/2, height/2)
+                const forceCenter = d3.forceCenter(0.8*width/2, 0.8*height/2)
                         .strength(0.05);
 
                 const forceLink = d3.forceLink();
@@ -94,7 +100,6 @@
                         .attr("class", function (d) { return "node " + d.label })
                         .attr("r", (d) => circleScale(d.weight));
 
-                
                 node.append("text")
                         .text((d) => `${d.title}`)
                         .attr("class", "node-text")
@@ -105,6 +110,11 @@
                 const nodeGroups = svg.selectAll(".node-group");
 
                 function tick() {
+                        
+                        forceCenter
+                                .x(0.8*window.innerWidth/2)
+                                .y(0.8*window.innerHeight/2);
+
                         link
                                 .attr("x1", d => d.source.x)
                                 .attr("y1", d => d.source.y)
@@ -115,6 +125,14 @@
 
                         }
                 
+                window.addEventListener("resize", function() {
+                        //Reheating the simulation
+                        simulation.alpha(0.1).restart();
+                        forceCenter
+                                .x(0.8*window.innerWidth/2)
+                                .y(0.8*window.innerHeight/2);
+                        
+                })
 
                 function drag(simulation) {    
                         function dragstarted(event) {

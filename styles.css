@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
-        
+
+body {
+    font-family: "IBM Plex Mono";
+}
+
 .node-text { 
         font-family: "IBM Plex Mono";
         font-size: 10px;
@@ -13,9 +17,17 @@
 
 #graph {
     position: absolute;
-    margin: auto;
+    display: flex;
+    overflow: hidden;
     height: 100%;
-    width: 100%;
+    width: 80%;
+}
+
+#side-right {
+    float: right;
+    width: 20%;
+    font-size: 12px;
+    text-align: justify;
 }
 
 h1 { 
